@@ -1,20 +1,16 @@
-# go-discord-irc
-
-[![Go Report Card](https://goreportcard.com/badge/github.com/qaisjp/go-discord-irc)](https://goreportcard.com/report/github.com/qaisjp/go-discord-irc)
-[![GoDoc](https://godoc.org/github.com/qaisjp/go-discord-irc?status.svg)](https://godoc.org/github.com/qaisjp/go-discord-irc)
+# discordbridge
 
 [![Preview](https://i.imgur.com/YpCqzdn.gif)](https://i.imgur.com/YpCqzdn.webm)
 
-**Is this being maintained?** Yes. But I want to merge all this functionality into the much superior [matterbridge by 42wim](https://github.com/42wim/matterbridge).
+Upstream: https://github.com/qaisjp/go-discord-irc
 
 This is IRC to Discord bridge was originally built for [@compsoc-edinburgh](http://github.com/compsoc-edinburgh) and
-[ImaginaryNet](http://imaginarynet.uk/), but now it looks like more people are using it!
+[ImaginaryNet](http://imaginarynet.uk/), but now it's used by the OCF.
 
 - The `IRC -> Discord` side of things work as you would expect it to: messages on IRC send to Discord as the bot user,
 as per usual.
 - The `Discord -> IRC` side of things is a little different. On connect, this bot will join the server with the `~d`,
 and spawn additional connections for each online person in the Discord.
-- Supports bidirectional PMs. (Not user friendly, but it works.)
 
 ## Gotchas
 
