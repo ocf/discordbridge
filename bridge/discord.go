@@ -51,7 +51,6 @@ func newDiscord(bridge *Bridge, botToken, guildID string) (*discordBot, error) {
 		discord.AddHandler(discord.OnPresencesReplace)
 		discord.AddHandler(discord.OnPresenceUpdate)
 		discord.AddHandler(discord.OnTypingStart)
-		discord.AddHandler(discord.OnMessageReactionAdd)
 	}
 
 	return discord, nil
@@ -84,10 +83,6 @@ func (d *discordBot) onMessageCreate(s *discordgo.Session, m *discordgo.MessageC
 
 func (d *discordBot) onMessageUpdate(s *discordgo.Session, m *discordgo.MessageUpdate) {
 	d.publishMessage(s, m.Message, true)
-}
-
-func (d *discordBot) OnMessageReactionAdd(s *discordgo.Session, m *discordgo.MessageReactionAdd) {
-	d.publishReaction(s, m.MessageReaction)
 }
 
 func (d *discordBot) publishMessage(s *discordgo.Session, m *discordgo.Message, wasEdit bool) {

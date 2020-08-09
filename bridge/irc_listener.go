@@ -29,7 +29,6 @@ func newIRCListener(dib *Bridge, webIRCPass string) *ircListener {
 	// Called when received channel names... essentially OnJoinChannel
 	irccon.AddCallback("366", listener.OnJoinChannel)
 	irccon.AddCallback("PRIVMSG", listener.OnPrivateMessage)
-	irccon.AddCallback("NOTICE", listener.OnPrivateMessage)
 	irccon.AddCallback("CTCP_ACTION", listener.OnPrivateMessage)
 
 	irccon.AddCallback("900", func(e *irc.Event) {
